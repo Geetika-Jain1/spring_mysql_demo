@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 
-@Controller
+@RestController
 @RequestMapping(path= "/cars")
 public class CarsController {
 
@@ -23,7 +23,7 @@ public class CarsController {
         return optinalCar;
 
     }
-    @PostMapping("/")
+    @PostMapping()
     public Car create(@RequestBody Car car) {
         carRepository.save(car);
         return car;
